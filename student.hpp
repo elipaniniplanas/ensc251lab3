@@ -56,7 +56,7 @@ public:
   // Friend Functions
   friend void swapPositions(student*, student*);
   /*Input: Two studnet pointers
-    Output: 
+    Output:
 
   */
   friend string compareCGPA(student, student);
@@ -137,30 +137,30 @@ public:
         int gettoeflspeak() const;
         int gettotal() const;
         // Friend functions
-        friend void Iswap(InternationalStudent*, InternationalStudent*);
-        /*Input: Pointer to two objects of InternationalStudents type
-          Output: Causes the pointers to switch addresses */
-        friend void deleteIelement(InternationalStudent *arr, int n, int del);
-        /*Input: Pointer to array of objects of InternationalStudent type, size of array, position of element to be deleted
-          Output: Causes the pointers to switch addresses */
-        friend void internationalOverallSort(InternationalStudent *arr, int n);
-        /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in the format step 5 of lab2 states */
-        friend string compareCountry(InternationalStudent, InternationalStudent);
-        /*Input: two InternationalStudent objects
-          Output: a string saying if the first object's Country member variable comes first in the alphabet from the second object's*/
-        friend void Ibubblesort_CGPA(InternationalStudent*, int);
-        /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in descending order of the value of the CGPA member variable */
-        friend void Ibubblesort_ResearchScore(InternationalStudent*, int);
-        /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in descending order of the value of the ResearchScore member variable */
-        friend void Ibubblesort_FirstName(InternationalStudent*, int);
-        /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in alphabetical order of the fname member variable */
-        friend void Ibubblesort_LastName(InternationalStudent *arr , int n);
-        /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in alphabetical order of the lname member variable */
+        // friend void Iswap(InternationalStudent*, InternationalStudent*);
+        // /*Input: Pointer to two objects of InternationalStudents type
+        //   Output: Causes the pointers to switch addresses */
+        // friend void deleteIelement(InternationalStudent *arr, int n, int del);
+        // /*Input: Pointer to array of objects of InternationalStudent type, size of array, position of element to be deleted
+        //   Output: Causes the pointers to switch addresses */
+        // friend void internationalOverallSort(InternationalStudent *arr, int n);
+        // /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in the format step 5 of lab2 states */
+        // friend string compareCountry(InternationalStudent, InternationalStudent);
+        // /*Input: two InternationalStudent objects
+        //   Output: a string saying if the first object's Country member variable comes first in the alphabet from the second object's*/
+        // friend void Ibubblesort_CGPA(InternationalStudent*, int);
+        // /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in descending order of the value of the CGPA member variable */
+        // friend void Ibubblesort_ResearchScore(InternationalStudent*, int);
+        // /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in descending order of the value of the ResearchScore member variable */
+        // friend void Ibubblesort_FirstName(InternationalStudent*, int);
+        // /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in alphabetical order of the fname member variable */
+        // friend void Ibubblesort_LastName(InternationalStudent *arr , int n);
+        // /*Input: Pointer to an array of InternationalStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in alphabetical order of the lname member variable */
         friend ostream& operator<<(ostream& outs, const InternationalStudent& istu);
         //overload the << (output) operator to allow a pre-set format of outputing the member variables of a InternationalStudent object to a ostream
 private:
