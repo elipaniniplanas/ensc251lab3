@@ -127,7 +127,7 @@ int ToeflScore::gettotalscore() const
         return(totalscore);
 }
 //Student constructors
-STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
+student::student(string first, string last, float cgpa, int score, int id)
 {
         //Error checking, making sure that the proper values are in range
         if(cgpa > 4.3 || cgpa < 0)
@@ -152,7 +152,7 @@ STUDENT::STUDENT(string first, string last, float cgpa, int score, int id)
         lname = last;
         ID = id;
 }
-STUDENT::STUDENT()
+student::student()
 {
         fname = " ";
         lname = " ";
@@ -161,15 +161,15 @@ STUDENT::STUDENT()
         ID = 0;
 }
 //Below are the mutator funtions for the Student class
-void STUDENT::setfname(string first)
+void student::setfname(string first)
 {
         fname = first;
 }
-void STUDENT::setlname(string last)
+void student::setlname(string last)
 {
         lname = last;
 }
-void STUDENT::setCGPA(float cgpa)
+void student::setCGPA(float cgpa)
 {
         if(cgpa > 4.3 || cgpa < 0)
         {
@@ -181,7 +181,7 @@ void STUDENT::setCGPA(float cgpa)
                 CGPA = cgpa;
         }
 }
-void STUDENT::setscore(int score)
+void student::setscore(int score)
 {
         if(score < 0 || score > 100)
         {
@@ -193,38 +193,38 @@ void STUDENT::setscore(int score)
                 SCORE = score;
         }
 }
-void STUDENT::setID(int id)
+void student::setID(int id)
 {
         ID = id;
 }
 //Below are the accessor functions for the Student class
-string STUDENT::getfname() const
+string student::getfname() const
 {
         return(fname);
 }
-string STUDENT::getlname() const
+string student::getlname() const
 {
         return(lname);
 }
-float STUDENT::getCGPA() const
+float student::getCGPA() const
 {
         return(CGPA);
 }
-int STUDENT::getscore() const
+int student::getscore() const
 {
         return(SCORE);
 }
-int STUDENT::getID() const
+int student::getID() const
 {
         return(ID);
 }
 //Constructor for the DomesticStudent class
 DomesticStudent::DomesticStudent(string first, string last, float cgpa, int score, int id, string pv):
-        STUDENT(first, last, cgpa, score, id)
+        student(first, last, cgpa, score, id)
 {
         province = pv;
 }
-DomesticStudent::DomesticStudent():STUDENT()
+DomesticStudent::DomesticStudent():student()
 {
         province = " ";
 }
@@ -240,7 +240,7 @@ string DomesticStudent::getprovince() const
 }
 //Constructor for the InternationalStudent class
 InternationalStudent::InternationalStudent(string first, string last, float cgpa, int score, int id, string co, int read, int write , int listen, int speak):
-        STUDENT(first, last, cgpa, score, id)
+        student(first, last, cgpa, score, id)
 {
         country = co;
         //Since TOEFL is a seperate object of a different class, we will have to use the ToeflScore mutator functions
@@ -249,7 +249,7 @@ InternationalStudent::InternationalStudent(string first, string last, float cgpa
         TOEFL.setlistening(listen);
         TOEFL.setspeaking(speak);
 }
-InternationalStudent::InternationalStudent():STUDENT(), country(""){ }
+InternationalStudent::InternationalStudent():student(), country(""){ }
 //Mutator functions for the InternationalStudent class
 void InternationalStudent::setcountry(string co)
 {
@@ -312,9 +312,9 @@ ostream& operator<<(ostream& outs, const InternationalStudent& istu)
    return(outs);
 }
 //Student's friend functions
-string compareCGPA(STUDENT overallgpa1, STUDENT overallgpa2)
+string compareCGPA(student overallgpa1, student overallgpa2)
 {
-        STUDENT result1,result2;
+        student result1,result2;
         result1.CGPA = overallgpa1.CGPA;
         result2.CGPA = overallgpa2.CGPA;
         if (result1.CGPA < result2.CGPA)
@@ -330,9 +330,9 @@ string compareCGPA(STUDENT overallgpa1, STUDENT overallgpa2)
                 return "equal";
         }
 }
-string compareResearchScore(STUDENT overallscore1, STUDENT overallscore2)
+string compareResearchScore(student overallscore1, student overallscore2)
 {
-        STUDENT result1,result2;
+        student result1,result2;
         result1.SCORE = overallscore1.SCORE;
         result2.SCORE = overallscore2.SCORE;
         if (result1.SCORE < result2.SCORE)
@@ -348,9 +348,9 @@ string compareResearchScore(STUDENT overallscore1, STUDENT overallscore2)
                 return "equal";
         }
 }
-string compareFirstName(STUDENT overallfname1, STUDENT overallfname2)
+string compareFirstName(student overallfname1, student overallfname2)
 {
-        STUDENT result1,result2;
+        student result1,result2;
         result1.fname = overallfname1.fname;
         result2.fname = overallfname2.fname;
         if (result1.fname < result2.fname)
@@ -366,7 +366,7 @@ string compareFirstName(STUDENT overallfname1, STUDENT overallfname2)
                 return "equal";
         }
 }
-string compareLastName(STUDENT overalllname1, STUDENT overalllname2)
+string compareLastName(student overalllname1, student overalllname2)
 {
         cout << "test comp";
         if (overalllname1.lname < overalllname2.lname)

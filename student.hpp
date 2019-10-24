@@ -1,4 +1,7 @@
 //header file student.hpp to declare your classes
+
+#ifndef STUDENT_HPP
+#define STUDENT_HPP
 using namespace std; //use namespace std
 #include <string> //you will have to use string in C++
 #include <iostream>
@@ -30,35 +33,42 @@ private:
         int totalscore;
 };
 
-class STUDENT
+class student// node
 {
 public:
   // Constructor
-  STUDENT(string first, string last, float cgpa, int score, int id);
-  STUDENT();
+  student(string first, string last, float cgpa, int score, int id);
+  student();
   // Mutator functions
   void setfname(string);
   void setlname(string);
   void setCGPA(float);
   void setscore(int);
   void setID(int);
+  void setlink(student*);
   //Accessor functions
   string getfname() const;
   string getlname() const;
   float getCGPA() const;
   int getscore() const;
   int getID() const;
+  ;
   // Friend Functions
-  friend string compareCGPA(STUDENT, STUDENT);
+  friend void swapPositions(student*, student*);
+  /*Input: Two studnet pointers
+    Output: 
+
+  */
+  friend string compareCGPA(student, student);
   /*Input: two student objects
     Output: a string saying if the first object's CGPA member variable is greater, equal, or less than the second object's*/
-  friend string compareResearchScore(STUDENT overallscore1, STUDENT overallscore2);
+  friend string compareResearchScore(student overallscore1, student overallscore2);
   /*Input: two student objects
     Output: a string saying if the first object's ResearchScore member variable is greater, equal, or less than the second object's*/
-  friend string compareFirstName(STUDENT, STUDENT);
+  friend string compareFirstName(student, student);
   /*Input: two student objects
     Output: a string saying if the first object's fname member variable comes first in the alphabet from the second object's*/
-  friend string compareLastName(STUDENT overalllname1, STUDENT overalllname2);
+  friend string compareLastName(student overalllname1, student overalllname2);
   /*Input: two student objects
     Output: a string saying if the first object's lname member variable comes first in the alphabet from the second object's*/
 
@@ -68,9 +78,10 @@ private:
         float CGPA;
         int SCORE;
         int ID;
+        student* link;
 };
 
-class DomesticStudent : public STUDENT
+class DomesticStudent : public student
 {
 public:
         //Constructors
@@ -81,27 +92,27 @@ public:
         //Accessor functions
         string getprovince() const;
         // Friend functions
-        friend void Dswap(DomesticStudent*, DomesticStudent*);
-        /*Input: Pointer to two objects of DomesticStudents type
-          Output: Causes the pointers to switch addresses */
-        friend void domesticOverallSort(DomesticStudent *arr, int n);
-        /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in the format step 5 of lab2 states */
-        friend string compareProvince(DomesticStudent, DomesticStudent);
-        /*Input: two DomesticStudent objects objects
-          Output: a string saying if the first object's Province member variable comes first in the alphabet from the second object's*/
-        friend void Dbubblesort_CGPA(DomesticStudent*, int);
-        /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in descending order of the value of the CGPA member variable */
-        friend void Dbubblesort_ResearchScore(DomesticStudent*, int);
-        /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in descending order of the value of the ResearchScore member variable */
-        friend void Dbubblesort_FirstName(DomesticStudent*, int);
-        /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in alphabetical order of the fname member variable */
-        friend void Dbubblesort_LastName(DomesticStudent *arr , int n);
-        /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
-          Output: Causes the pointed array to be sorted in alphabetical order of the lname member variable */
+        // friend void Dswap(DomesticStudent*, DomesticStudent*);
+        // /*Input: Pointer to two objects of DomesticStudents type
+        //   Output: Causes the pointers to switch addresses */
+        // friend void domesticOverallSort(DomesticStudent *arr, int n);
+        // /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in the format step 5 of lab2 states */
+        // friend string compareProvince(DomesticStudent, DomesticStudent);
+        // /*Input: two DomesticStudent objects objects
+        //   Output: a string saying if the first object's Province member variable comes first in the alphabet from the second object's*/
+        // friend void Dbubblesort_CGPA(DomesticStudent*, int);
+        // /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in descending order of the value of the CGPA member variable */
+        // friend void Dbubblesort_ResearchScore(DomesticStudent*, int);
+        // /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in descending order of the value of the ResearchScore member variable */
+        // friend void Dbubblesort_FirstName(DomesticStudent*, int);
+        // /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in alphabetical order of the fname member variable */
+        // friend void Dbubblesort_LastName(DomesticStudent *arr , int n);
+        // /*Input: Pointer to an array of DomesticStudents and the number of elements in the array
+        //   Output: Causes the pointed array to be sorted in alphabetical order of the lname member variable */
         friend ostream& operator<<(ostream& outs, const DomesticStudent& dstu);
         //overload the << (output) operator to allow a pre-set format of outputing the member variables of a DomesticStudent object to a ostream
 private:
@@ -109,7 +120,7 @@ private:
 };
 
 
-class InternationalStudent : public STUDENT
+class InternationalStudent : public student
 {
 public:
         //Constructors
@@ -156,3 +167,4 @@ private:
         string country;
         ToeflScore TOEFL;
 };
+#endif

@@ -14,10 +14,12 @@ int main(){
   string line; //Used to retrieve a line in the files
   string userInStu; // User input
   string userInComp; // User input
-  DomesticStudent Dstudent[100]; //Array of DomesticStudent type objects
-  InternationalStudent Istudent[100]; //Array InternationalStudent type objects
-  int sizeD; // Sizes of array
-  int sizeI;
+  student* Dhead; //Head pointer for the DomesticStudent linked list
+  student* Dtail; //Tail pointer for the DomesticStudent linked list
+  student* DtempPtr; //Temporary pointer for the DomesticStudent linked list
+  student* Ihead; //Head pointer for the InternationalStudent linked list
+  student* Itail; //Tail pointer for the InternationalStudent linked list
+  student* ItempPtr; //Temporary pointer for the InternationalStudent linked list
 
   //Read the domestic-stu.txt file and exit if failed
   ifstream domesticFile("domestic-stu.txt");
@@ -49,13 +51,8 @@ int main(){
     getline(ss, s_researchScore, ',');
     researchScore = atoi(s_researchScore.c_str());
 
-    // Set all data to the Istudent object with mutator functions
-    Dstudent[counter1].setID(ID_count);
-    Dstudent[counter1].setfname(firstName);
-    Dstudent[counter1].setlname(lastName);
-    Dstudent[counter1].setCGPA(cgpa);
-    Dstudent[counter1].setscore(researchScore);
-    Dstudent[counter1].setprovince(province);
+    // Set all data to a DomesticStudent node
+
 
     counter1++;
     Dstu_count++;
