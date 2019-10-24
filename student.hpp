@@ -80,6 +80,7 @@ private:
         int ID;
         student* link;
 };
+typedef student* studentprt;
 
 class DomesticStudent : public student
 {
@@ -167,4 +168,7 @@ private:
         string country;
         ToeflScore TOEFL;
 };
+
+
+
 #endif
