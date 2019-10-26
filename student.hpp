@@ -81,6 +81,7 @@ private:
         student* link;
 };
 typedef student* studentprt;
+        
 
 class DomesticStudent : public student
 {
