@@ -1,11 +1,10 @@
 //header file student.hpp to declare your classes
-
+//checking if student.hpp is previously defined 
 #ifndef STUDENT_HPP
 #define STUDENT_HPP
 using namespace std; //use namespace std
 #include <string> //you will have to use string in C++
 #include <iostream>
-#pragma once
 
 class ToeflScore
 {
@@ -33,7 +32,8 @@ private:
         int totalscore;
 };
 
-class student// node
+//node
+class student
 {
 public:
   // Constructor
@@ -56,9 +56,7 @@ public:
   // Friend Functions
   friend void swapPositions(student*, student*);
   /*Input: Two studnet pointers
-    Output: 
-
-  */
+    Output:                           */
   friend string compareCGPA(student, student);
   /*Input: two student objects
     Output: a string saying if the first object's CGPA member variable is greater, equal, or less than the second object's*/
