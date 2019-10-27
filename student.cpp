@@ -126,6 +126,8 @@ int ToeflScore::gettotalscore() const
 {
         return(totalscore);
 }
+
+
 //Student constructors
 student::student(string first, string last, float cgpa, int score, int id)
 {
@@ -218,6 +220,55 @@ int student::getID() const
 {
         return(ID);
 }
+	
+void overall_sorting(studentprt& n, student temp)
+{
+        node* cur1 = head;
+        node* cur2 = head;
+
+       for (int i = 0; i < getSize(); i++) 
+       {
+        for (int j = 0; j < getSize() - 1; j++) 
+	{
+            if (cur1->data < cur2->data)
+	    {
+                int temp = cur1->data;
+                cur1->data = cur2->data;
+                cur2->data = temp;
+            }
+            cur2 = cur2->next;
+        }
+         cur2 = head;
+         cur1 = head->next;
+         for (int k = 0; k < i; k++) 
+	 {
+                cur1 = cur1->next;
+         }
+    }
+}
+
+void add_node(studentprt& n, student temp)
+{
+	node *tmp = new node;
+	tmp -> data = temp;
+	tmp -> next = NULL;
+	if(head = NULL)
+	{
+		head = tmp;
+		tail = tmp;
+	}
+	else
+	{
+		if(overall_sorting(n, temp)
+		   {
+			   tail -> next = tmp;
+			   tail = tail -> next; 
+		   }
+	}
+}
+
+
+
 //Constructor for the DomesticStudent class
 DomesticStudent::DomesticStudent(string first, string last, float cgpa, int score, int id, string pv):
         student(first, last, cgpa, score, id)
