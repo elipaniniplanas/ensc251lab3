@@ -94,14 +94,7 @@ int main(){
     getline(ss, s_write, ',');
     write = atoi(s_write.c_str());
     // Set all data to the Istudent object with mutator functions
-    Istudent[counter2].setfname(firstName);
-    Istudent[counter2].setlname(lastName);
-    Istudent[counter2].setCGPA(cgpa);
-    Istudent[counter2].setscore(researchScore);
-    Istudent[counter2].setID(ID_count);
-    Istudent[counter2].setcountry(country);
-    Istudent[counter2].settoefl(read,write,listen,speak);
-
+ 
     //Generate a new ID and prepare to the next iteration of the loop
     counter2++;
     Istu_count++;
@@ -109,9 +102,9 @@ int main(){
   }
   //close your file
   internationalFile.close();
-  sizeD = sizeof(Dstudent)/sizeof(Dstudent[0]);// memory the array takes in bytes / the memory of one element of the array in bytes
-  sizeI = sizeof(Istudent)/sizeof(Istudent[0]);
-  retry: //gateway of loop for user input error
+	
+	
+  retry:
   cout << "What would you like to sort:\nDomestic students; type 'D' or 'd'\nInternational students; type 'I' or 'i'\nINPUT: "; // prompt for user input
   cin >> userInStu;
   cout << endl;
@@ -125,46 +118,25 @@ int main(){
     //Sort by CGPA
     if ((userInComp == "c")||(userInComp == "C"))
     {
-      Dbubblesort_CGPA(Dstudent, sizeD);
-      for(int k=0; k < sizeD; k++)
-      {
-        cout << Dstudent[k];
-      }
+
     }
     // Sort by research score
     else if ((userInComp == "r")||(userInComp == "R"))
     {
-      Dbubblesort_ResearchScore(Dstudent, sizeD);
-      for(int k=0; k < sizeD; k++)
-      {
-        cout << Dstudent[k];
-      }
+      
     }
     // Sort by first name
     else if ((userInComp == "f")||(userInComp == "F"))
     {
-      Dbubblesort_FirstName(Dstudent, sizeD);
-      for(int k=0; k < sizeD; k++)
-      {
-        cout << Dstudent[k];
-      }
     }
     // Sort by last name
     else if ((userInComp == "l")||(userInComp == "L"))
     {
-      Dbubblesort_LastName(Dstudent, sizeD);
-      for(int k=0; k < sizeD; k++)
-      {
-        cout << Dstudent[k];
-      }
+      
     }
     else if ((userInComp == "o")||(userInComp == "O"))
     {
-      domesticOverallSort(Dstudent, sizeD);
-      for(int k=0; k < sizeD; k++)
-      {
-        cout << Dstudent[k];
-      }
+      
     }
     else
     {
@@ -181,46 +153,26 @@ int main(){
     // Sort by CGPA
     if ((userInComp == "c")||(userInComp == "C"))
     {
-      Ibubblesort_CGPA(Istudent, sizeI);
-      for(int k=0; k < sizeI; k++)
-      {
-        cout << Istudent[k];
-      }
+      
     }
     // Sort by reseach score
     else if ((userInComp == "r")||(userInComp == "R"))
     {
-      Ibubblesort_ResearchScore(Istudent, sizeI);
-      for(int k=0; k < sizeI; k++)
-      {
-        cout << Istudent[k];
-      }
+      
     }
     // Sort by first name
     else if ((userInComp == "f")||(userInComp == "F"))
     {
-      Ibubblesort_FirstName(Istudent, sizeI);
-      for(int k=0; k < sizeI; k++)
-      {
-        cout << Istudent[k];
-      }
+      
     }
     // Sort by last name
     else if ((userInComp == "l")||(userInComp == "L"))
     {
-      Ibubblesort_LastName(Istudent, sizeI);
-      for(int k=0; k < sizeI; k++)
-      {
-        cout << Istudent[k];
-      }
+      
     }
     else if ((userInComp == "o")||(userInComp == "O"))
     {
-      internationalOverallSort(Istudent, sizeD);
-      for(int k=0; k < sizeD; k++)
-      {
-        cout << Istudent[k];
-      }
+      
     }
     else
     {
