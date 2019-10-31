@@ -221,16 +221,20 @@ int student::getID() const
         return(ID);
 }
 	
-void overall_sorting(studentprt& n, student temp)
+/*void overall_sorting(studentprt& n, student temp)
 {
         student* cur1 = head;
         student* cur2 = head;
-
-       for (int i = 0; i < getSize(); i++) 
-       {
-        for (int j = 0; j < getSize() - 1; j++) 
+	
+	while(cur1 -> link != nullptr)
 	{
-            if (cur1->data < cur2->data)
+		
+	}
+       for (int i = 0; i <  ; i++) 
+       {
+        for (int j = 0; j <  - 1; j++) 
+	{
+            if (cur1-> data < cur2->data)
 	    {
                 int temp = cur1->data;
                 cur1->data = cur2->data;
@@ -243,30 +247,30 @@ void overall_sorting(studentprt& n, student temp)
          for (int k = 0; k < i; k++) 
 	 {
                 cur1 = cur1->next;
-         }
-    }
+	 }
+       }
 }
-
-void add_node(studentprt& n, student temp)
+*/
+void add_node(studentprt& head, studentprt& tail, student temp)
 {
-	node *tmp = new node;
-	tmp -> data = temp;
-	tmp -> next = NULL;
-	if(head = NULL)
+	studentprt newstudent = new student;
+	newstudent -> setlink(temp.getlink());
+	newstudent -> setfname(temp.getfname());
+	newstudent -> setlname(temp.getlname());
+	newstudent -> setCGPA(temp.getCGPA());
+	newstudent -> setscore(temp.getscore());
+	newstudent -> setID(temp.getID());
+	if(head == NULL)
 	{
-		head = tmp;
-		tail = tmp;
+		head = newstudent;
+		tail = newstudent;
 	}
 	else
 	{
-		if(overall_sorting(n, temp)
-		   {
-			   tail -> next = tmp;
-			   tail = tail -> next; 
-		   }
+		tail -> setlink(newstudent);
+		tail = tail -> getlink(); 
 	}
-}
-
+}  
 
 
 //Constructor for the DomesticStudent class
