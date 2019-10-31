@@ -363,7 +363,7 @@ ostream& operator<<(ostream& outs, const InternationalStudent& istu)
    return(outs);
 }
 //Student's friend functions
-string compareCGPA(student overallgpa1, student overallgpa2)
+/*string compareCGPA(student overallgpa1, student overallgpa2)
 {
         student result1,result2;
         result1.CGPA = overallgpa1.CGPA;
@@ -379,7 +379,6 @@ string compareCGPA(student overallgpa1, student overallgpa2)
         else
         {
                 return "equal";
-        }
 }
 string compareResearchScore(student overallscore1, student overallscore2)
 {
@@ -767,3 +766,4 @@ void internationalOverallSort(InternationalStudent *arr, int n)
   }
   arr = temp;
 }
+*/
