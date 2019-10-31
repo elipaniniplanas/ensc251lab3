@@ -52,7 +52,7 @@ public:
   float getCGPA() const;
   int getscore() const;
   int getID() const;
-  ;
+  student* getlink() const;
   // Friend Functions
   friend void swapPositions(student*, student*);
   /*Input: Two studnet pointers
