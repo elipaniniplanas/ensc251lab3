@@ -223,8 +223,8 @@ int student::getID() const
 	
 void overall_sorting(studentprt& n, student temp)
 {
-        node* cur1 = head;
-        node* cur2 = head;
+        student* cur1 = head;
+        student* cur2 = head;
 
        for (int i = 0; i < getSize(); i++) 
        {
