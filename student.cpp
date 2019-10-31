@@ -199,6 +199,10 @@ void student::setID(int id)
 {
         ID = id;
 }
+void student::setlink(student* chain)
+{
+	link = chain;
+}
 //Below are the accessor functions for the Student class
 string student::getfname() const
 {
@@ -219,6 +223,10 @@ int student::getscore() const
 int student::getID() const
 {
         return(ID);
+}
+student* student::getlink() const
+{
+	return(link);
 }
 	
 /*void overall_sorting(studentprt& n, student temp)
